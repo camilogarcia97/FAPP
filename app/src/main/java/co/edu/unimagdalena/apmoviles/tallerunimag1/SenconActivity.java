@@ -1,8 +1,12 @@
 package co.edu.unimagdalena.apmoviles.tallerunimag1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -99,5 +103,26 @@ public class SenconActivity extends AppCompatActivity implements View.OnClickLis
                 num2 = num2 - num1;
             }
         return num1;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.m1: Toast.makeText(this,"Menu 1", Toast.LENGTH_LONG).show();
+            break;
+            case R.id.m2: Toast.makeText(this,"Menu 2", Toast.LENGTH_LONG).show();
+            break;
+            case R.id.m3: Toast.makeText(this,"Menu 3", Toast.LENGTH_LONG).show();
+            break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
